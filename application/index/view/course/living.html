@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>好课季，自我提升正当时 三月飞</title>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+<!-- HTML5 shim for IE8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="shortcut icon" href="/favicon.png" type="image/png">
+<link href="./static/home/css/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    //全局变量
+    var GV = {
+        ROOT: "/",
+        WEB_ROOT: "/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="./static/js/jquery.js"></script>
+<script src="./static/js/wind.js"></script>
+	
+    <link href="./static/student/css/common.css" rel="stylesheet" type="text/css">
+<link href="./static/swiper/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="./static/student/css/pick-pcc.min.1.0.1.css" rel="stylesheet" type="text/css">
+
+    <link href="./static/swiper/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="./static/student/css/liveing.css?t=1590716666" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="liveing">
+        <div class="liveing_top">
+            <div class="l_top_l">
+                <div class="live_tips">
+                                        <div class="live_status">
+                                                    <text style="color: #3DD1A2;">直播中</text>
+                                            </div>
+                </div>
+            </div>
+            <div class="l_top_c">
+                好课季，自我提升正当时            </div>
+            <div class="l_top_r">
+                <div class="live_nums"><span class="img"></span><span id="js_usernums">2</span></div>
+                <img src="https://demo.sdwanyue.com/upload/default/20211212/75007c35f0c35b7272845afd379893c8.jpg" class="l_top_r_a">
+                <p class="l_top_s">1二五</p>
+            </div>
+        </div>
+        <div class="liveing_c clearfix">
+            
+            <div class="liveing_c_l">
+                            </div>
+            <div class="liveing_c_c">
+                <div class="liveing_play">
+                                            <img class="live_play" src="./static/student/images/liveing/live_play.png">
+                        <div id="liveing_play_bd"></div>
+                                    </div>
+                
+                <div class="liveing_c_c_b">
+                    <div class="ppt_list_title">
+                        <ul>
+                            <li class="on js_ppt_title">
+                                                        视频课件直播
+                                                        </li>
+                        </ul>
+                                            </div>
+                    <div class="ppt_list">
+                        <div class="swiper-container gallery-thumbs">
+                            <div class="swiper-wrapper  ">
+                                                            </div>
+                        </div>
+                                            </div>
+                    <div style="display:none;" id="upload"></div>
+                                    </div>
+            </div>
+            <div class="liveing_c_r">
+                                <!-- <if condition="$info['livetype'] neq 5"> -->
+                                <div class="liveing_c_r_tab">
+                    <ul>
+                        <li class="on" data-type="1">讲师区</li>
+                        <li data-type="0">讨论区</li>
+                        <li data-type="2">问答区</li>
+
+                    </ul>
+                </div>
+                <div class="liveing_c_r_tab_b">
+                    <div class="liveing_c_r_tab_bd">
+                        <div class="msg" id="js_msg_explain">
+                            <ul>
+                                <!-- <li>
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_audio">
+                                            <div class="msg_c_audio">
+                                                <i></i> <span>5”</span>
+                                                <audio preload="auto" src=""></audio>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li> -->
+                                <!-- <li>
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_c">啊<img class="emoji" src="./static/emoji/img/666.png" ></div>
+                                    </div>
+                                </li> -->
+                                <!-- <li class="msg_right qa on">
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_c">啊</div>
+                                    </div>
+                                    <div class="qa_b" data-chatid="1" data-touid="1" data-toname="1" data-content="1">
+                                        <button>回复</button>
+                                    </div>
+                                </li> -->
+                                
+                                <!-- <li class="msg_right">
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_c">啊</div>
+                                    </div>
+                                </li> -->
+                                <!-- <li>
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_c">
+                                            <div class="msg_c_r">
+                                                <div class="msg_c_r_b"></div>
+                                                <div class="msg_c_r_c">
+                                                    <div class="msg_c_r_c_n">昵称</div>
+                                                    <div class="msg_c_r_c_c">内容</div>
+                                                </div>
+                                            </div>
+                                            @昵称 啊
+                                        </div>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="liveing_c_r_tab_bd" style="display:none;">
+                        <div class="msg" id="js_msg_talk">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="liveing_c_r_tab_bd " style="display:none;">
+                        <div class="msg" id="js_msg_qa">
+                            <ul>
+                                <!-- <li class="qa">
+                                    <div class="msg_n"><img src="/logo.png"><span>昵称</span><span>讲师</span></div>
+                                    <div class="msg_p">
+                                        <div class="msg_c">啊</div>
+                                    </div>
+                                    <div class="qa_b" data-chatid="1" data-touid="1" data-toname="1" data-content="啊">
+                                        <button>回复</button>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="liveing_send">
+                    <div class="msg_area">
+                        <div class="shut_area">
+                            <!-- <input type="checkbox" id="stopspeak" class="test">
+                            <label for="stopspeak"> <span class="checkbox"></span>提问</label> -->
+                            <input type="checkbox" id="putQuestions" class="test">
+                            <label for="putQuestions"> <span class="checkbox"></span>提问</label>
+                        </div>
+                    </div>
+                    <div class="send_area">
+                        <textarea rows="3" placeholder="输入内容"></textarea>
+                        <button type="button" id="js_send" data-type="0">发送</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var __SITEURL__ = "https://demo.sdwanyue.com";
+    var __SITEINFO__ = {"site_name":"\u4e07\u5cb3\u6559\u80b2\u5f00\u6e90","site_seo_title":"\u4e07\u5cb3\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf\u6f14\u793av1.0.7","site_seo_keywords":"\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf,\u5728\u7ebf\u6559\u80b2\u7cfb\u7edf,\u5f00\u6e90\u5728\u7ebf\u6559\u80b2\u7cfb\u7edf,\u5f00\u6e90\u5728\u7ebf\u6559\u80b2\u5e73\u53f0,\u5f00\u6e90\u6559\u80b2APP\u5f00\u53d1,\u5f00\u6e90\u6559\u80b2\u8f6f\u4ef6,\u5f00\u6e90\u7f51\u6821\u7cfb\u7edf\u6e90\u7801,\u5f00\u6e90\u7f51\u6821\u5e73\u53f0\u642d\u5efa,\u5f00\u6e90\u77e5\u8bc6\u4ed8\u8d39\u7cfb\u7edf\u6e90\u7801","site_seo_description":"\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf\u6f14\u793a\u7ad9\u3002\u54c1\u8d28\u4f18\uff0c\u5168\u5f00\u6e90\uff0c\u6613\u642d\u5efa\uff0c\u529f\u80fd\u5168\u3002QQ\u5ba2\u670d\uff1a2415408120","site_icp":"","site_gwa":"","site_admin_email":"","site_analytics":"","site_url":"https:\/\/demo.sdwanyue.com","copyright":"\u4e07\u5cb3\u6559\u80b2\u5f00\u6e90","apk_ver":"","apk_url":"","apk_des":"\u7248\u672c\u66f4\u65b0\uff0c\u662f\u5426\u524d\u5f80\u66f4\u65b0\uff1f","ipa_ver":"","ios_shelves":"","ipa_url":"","ipa_des":"\u7248\u672c\u66f4\u65b0\uff0c\u662f\u5426\u524d\u5f80\u66f4\u65b0\uff1f","qr_url":"","site_phone":"","wx_url":"","small_shelves":"1.0.0"};
+    var userinfoj = {"id":27,"sex":0,"birthday":0,"coin":"0.00","consumption":"0.00","user_login":"13800000000","user_nickname":"1\u4e8c\u4e94","avatar":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","avatar_thumb":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","signature":"","mobile":"","login_type":0,"school":"","experience":null,"feature":null,"type":0,"signoryid":0,"identity":"","courses":0,"list_order":10000,"gradeid":3,"integral":"0.00","token":"ba2ec56d7c907c8260d4a3685775b0eb","gradename":"\u4e8c\u5e74\u7ea7","signory":[],"identitys":[]}; //用户信息
+
+</script>
+<script src="./static/js/layer/layer.js"></script>
+<script src="./static/student/js/common.js"></script>
+<script src="./static/swiper/swiper.min.js"></script>
+
+
+    <!-- 视频播放start -->
+<script src="./static/xigua/xgplayer.js" type="text/javascript"></script>
+<script src="./static/xigua/xgplayer-flv.js.js" type="text/javascript"></script>
+<script src="./static/xigua/xgplayer-hls.js.js" type="text/javascript"></script>
+<script src="./static/xigua/player.js?=1587346624" type="text/javascript"></script>
+    <link href="./static/teacher/css/equipment.css" rel="stylesheet" type="text/css">
+
+<div class="checkDevices">
+        <div class="device_top">
+            <ul>
+                <li class="on">
+                    <div class="device_img">
+                        <img src="./static/teacher/images/liveing/c_camera.png">
+                    </div>
+                    <div class="device_t">
+                        摄像头检测中
+                    </div>
+                </li>
+                <li>
+                    <div class="device_img">
+                        <img src="./static/teacher/images/liveing/c_mic.png">
+                    </div>
+                    <div class="device_t">
+                        麦克风
+                    </div>
+                </li>
+                <li>
+                    <div class="device_img">
+                        <img src="./static/teacher/images/liveing/c_set.png">
+                    </div>
+                    <div class="device_t">
+                        检测结果
+                    </div>
+                </li>
+            </ul>
+            <div class="device_line"></div>
+        </div>
+        
+        <div class="device_bottom">
+            <div class="device_bd ">
+                <div class="device_bd_t">
+                    您是否能看到自己的摄像头画面？
+                </div>
+                <div class="device_bd_s">
+                    <span>摄像头</span>
+                    <select name="videoinput"></select>
+                </div>
+                <div class="device_bd_v">
+                    <div id="device_video">
+                    </div>
+                </div>
+                <div class="device_bd_b">
+                    <span class="device_btn device_btn_no js_check_camera">不可以看到</span>
+                    <span class="device_btn device_btn_ok js_check_camera">可以看到</span>
+                </div>
+            </div>
+            
+            <div class="device_bd hide">
+                <div class="device_bd_t">
+                    对着麦克风讲话，您是否能看到音量波动条？？
+                </div>
+                <div class="device_bd_s">
+                    <span>麦克风</span>
+                    <select name="audioinput"></select>
+                </div>
+                <div class="device_bd_v">
+                    <div id="device_audio">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="device_bd_b">
+                    <span class="device_btn device_btn_no js_check_mic">不可以看到</span>
+                    <span class="device_btn device_btn_ok js_check_mic">可以看到</span>
+                </div>
+            </div>
+            
+            <div class="device_bd hide">
+                <div class="device_bd_table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>检测项目</td>
+                            <td>检测结果</td>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>摄像头</td>
+                            <td><span class="point js_point_camera"></span><span class="js_txt_camera">正常</span></td>
+                        </tr>
+                        <tr>
+                            <td>麦克风</td>
+                            <td><span class="point js_point_mic"></span><span class="js_txt_mic">正常</span></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="device_bd_b">
+                    <span class="device_btn device_btn_no js_check_reset">重新检测</span>
+                    <span class="device_btn device_btn_ok js_check_ok">去上台</span>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./static/teacher/js/equipment.js"></script>
+    <script type="text/javascript" src="./static/agora/AgoraRTCSDK-3.0.1.js"></script>
+    <script src="./static/swiper/swiper.min.js"></script>
+    <script src="./static/js/socket.io.js"></script>
+    <script src="./static/js/ajaxfileupload.js"></script>
+    <script src="./static/emoji/emoji.js?t=1587286398"></script>
+    <script src="./static/recorder/recorder.js"></script>
+    <script>
+        var rtc = {
+            client: null, //上课房间初始化
+            client_screen: null, //共享屏幕房间初始化
+            joined: false, //是否进入上课房间
+            joined_screen: false, //是否进入共享屏幕房间
+            published: false, //是否推上课流
+            published_screen: false, //是否推共享流
+            localStream: null, //本地流
+            localStream_screen: null, //共享流
+            remoteStreams: [], //所有的上课异地流
+            remoteStreams_screen: [], //所有的共享异地流
+            params: {}, //上课用户信息
+            params_screen: {}, //共享用户信息
+        };
+
+        //声网的一些信息
+        var option = {
+            appID: "4ff617f955ec4e5f89414cc06855cd46", //声网appid
+            channel: "151_319_0", //上课房间id，区分房间的唯一id
+            channel_screen: 999999999, //共享房间id，区分房间的唯一id
+            uid: "27", //上课房间uid，用于推流的streamID
+            uid_screen: 0, //共享房间uid，用于推流的streamID
+            token: null
+        }
+        
+        var _DATA = {};
+        _DATA.userinfo={"id":27,"sex":0,"birthday":0,"coin":"0.00","consumption":"0.00","user_login":"13800000000","user_nickname":"1\u4e8c\u4e94","avatar":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","avatar_thumb":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","signature":"","mobile":"","login_type":0,"school":"","experience":null,"feature":null,"type":0,"signoryid":0,"identity":"","courses":0,"list_order":10000,"gradeid":3,"integral":"0.00","token":"ba2ec56d7c907c8260d4a3685775b0eb","gradename":"\u4e8c\u5e74\u7ea7","signory":[],"identitys":[]};//用户信息
+        _DATA.roominfo={"id":319,"liveuid":151,"chatserver":"https:\/\/demo.sdwanyue.com:19967","sound_appid":"4ff617f955ec4e5f89414cc06855cd46","pull":"https:\/\/demo.sdwanyue.com\/upload\/admin\/20210331\/b6cf118cbbaf4308f9f214de589e0212.mp4","stream":"151_319_0","livetype":2,"courseid":"319","lessonid":"0","name":"\u597d\u8bfe\u5b63\uff0c\u81ea\u6211\u63d0\u5347\u6b63\u5f53\u65f6","thumb":"https:\/\/demo.sdwanyue.com\/upload\/admin\/20210331\/b403cb8bf698a911f22a31c6a061e374.jpg","nums":2,"ppts":[],"pptsj":"[]","islive":1,"times":0,"uuid":"","roomtoken":"","file_uuid":"","isshup":0,"user_type":"0","livemode":0,"pptindex":0,"shutup_room":0,"chatopen":0};//房间信息
+        _DATA.teacherinfo={"id":"151","user_nickname":"\u5927\u725b\u8001\u5e08","avatar":"https:\/\/demo.sdwanyue.com\/upload\/admin\/20210331\/d83431fc205f662bbf356cc5ae1e2bd8.png","avatar_thumb":"https:\/\/demo.sdwanyue.com\/upload\/admin\/20210331\/d83431fc205f662bbf356cc5ae1e2bd8.png","sex":"1","signature":"","birthday":"0","type":"1","signoryid":"0","identity":"","signory":[],"identitys":[]};//老师信息
+        
+        var courseid='319';
+        var lessonid='0';
+        var stream='151_319_0';
+        var ppts=[];
+        var shutup_room = 0;
+        var socket = new io("https://demo.sdwanyue.com:19967");
+    </script>
+    <script src="./static/student/js/event_liveing.js?t=1590716666"></script>
+    <script src="./static/student/js/eventListen.js"></script>
+    <script src="./static/student/js/liveing.js?t=1591079583"></script>
+    
+    
+</body>
+</html>

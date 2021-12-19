@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>三月飞</title>
+    
+    {include file='public/head' }
+
+    <link href="../../static/student/css/detail.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="common_header_nav">
+    <div class="content">
+        <div class="left">
+            <img src="../../static/images/logo.png">
+
+            <text>三月飞</text>
+        </div>
+        <div class="middle">
+            <ul>
+                {volist name='menu' id='menu'}
+                    <li>
+                        {if condition="$menu.c==$controller"}
+                            <a href="{:url('index/'.$menu['c'].'/index')}" class="olda on">
+                            {$menu['name']}
+                            <div class="none block"></div>
+                            </a>
+                        {else /}
+                            <a href="{:url('index/'.$menu['c'].'/index')}" class="olda">
+                            {$menu['name']}
+                            <div class="none"></div>
+                            </a>
+                        {/if}
+                        
+                    </li>
+                {/volist}
+                
+
+            </ul>
+        </div>
+        <div class="right">
+            <div class="search">
+                <input type="password" hidden autocomplete=“new-password”>
+                <input id="searchval" type="text" value="" placeholder="课程、讲师" />
+                <button id="search">搜索</button>
+            </div>
+
+            <div class="login">
+                {if condition="$isLog == 0"}
+                    <div class="log_or_reg">登录/注册</div>
+                {else /}
+                    <div class="login_info">
+                        <img class="avatar" src="../../static/images/default.png">
+
+                        <div class="drop_down none">
+                            <div class="li1"><a href="/index/mine/index">我的课程</a></div>
+                            <div class="li2"><a id="logout" href="javacript:void(0);">退出登录</a></div>
+                        </div>
+                    </div>
+                {/if}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="common_garde ">
+    <div class="content">
+        <div class="tips">
+            <div class="text1">请选择你想看的学习阶段</div>
+            <div class="text2">随时可以更改，请放心选择</div>
+        </div>
+        <div class="grade">
+            <div class="list">
+                <div class="left">小学</div>
+                    <div class="right">
+                            <div data-id="2" style="cursor:pointer;" class="li ">一年级</div>
+                            <div data-id="3" style="cursor:pointer;" class="li on">二年级</div>
+                            <div data-id="16" style="cursor:pointer;" class="li ">三年级</div>
+                            <div data-id="5" style="cursor:pointer;" class="li ">四年级</div>
+                            <div data-id="6" style="cursor:pointer;" class="li ">五年级</div>
+                            <div data-id="7" style="cursor:pointer;" class="li ">六年级</div>
+                    </div>
+                <div class="left">初中</div>
+                    <div class="right">
+                        <div data-id="9" style="cursor:pointer;" class="li ">初一</div>
+                        <div data-id="10" style="cursor:pointer;" class="li ">初二</div>
+                        <div data-id="15" style="cursor:pointer;" class="li ">初三</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--登录页面-->
+    <div class="common_login none">
+        <div class="content">
+            <div class="close">
+                <img class="imgx" src="../../static/student/images/common/login_cha.png">
+            </div>
+            
+            <div class="sitename">登录三月飞课堂</div>
+
+            <div class="info">
+                <div class="type">
+                    
+                    <div class="logintype">
+                        <a href="javacript:void(0);">
+                            <text class="c969696 black">密码登录</text>
+                            <div class="heng"></div>
+                        </a>
+                    </div>
+                    <div class="logintype">
+                        <a href="javacript:void(0);">
+                            <text class="c969696">验证码登录</text>
+                            <div class="heng none"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="inputs">
+                    <input type="text" class="input1" value="" placeholder="请输入手机号" value="13800000000" />
+                    <input type="password" class="input2" value="" placeholder="请输入密码" value="123456" />
+                    <div class="forget">忘记密码</div>
+                </div>
+
+                <div class="inputs1 none">
+                    <input class="input3" value="" placeholder="请输入手机号" />
+                    <div>
+                        <input class="input4" value="" placeholder="请输入验证码" />
+                        <div class="getLoginCode"><a href="javacript:void(0);" class="on">获取验证码</a></div>
+                    </div>
+                    <div class="forget">忘记密码</div>
+                </div>
+
+
+                <button class="login">登录</button>
+
+                <div class="tips">还没有账号？<text class="goreg"><a href="javacript:void(0);" class="on">立即注册</a></text></div>
+
+                <div class="third">
+                </div>
+
+            </div>
+        </div>
+        <div class="content none">
+            <div class="close">
+                <img class="imgfan" src="../../static/student/images/common/login_fan.png">
+            </div>
+            
+            <div class="sitename">忘记密码</div>
+
+            <div class="info">
+
+                <div class="inputs3">
+                    <input type="text" class="input8" value="" placeholder="请输入手机号" />
+                    <div>
+                        <input type="text" class="input9" value="" placeholder="请输入验证码" />
+                        <div class="getForgetCode"><a href="javacript:void(0);" class="on">获取验证码</a></div>
+                    </div>
+
+                    <input type="password" class="input10" value="" placeholder="请设置密码" />
+                </div>
+
+                <button class="fortrue">确定</button>
+
+
+                <div class="third" style="margin-top: 45px;">
+                    
+                </div>
+
+            </div>
+        </div>
+        <div class="content none">
+            <div class="close">
+                <img class="imgx" src="../../static/student/images/common/login_cha.png">
+            </div>
+            
+
+            <div class="sitename">欢迎注册三月飞课堂</div>
+
+
+
+            <div class="info">
+
+                <div class="inputs2">
+                    <input type="text" name="user_name" class="input20" placeholder="请输入用户名" /><br>
+                    <input type="text" name="mobile" class="input5" placeholder="请输入手机号" />
+                    <div>
+                        <input type="text" name="code" class="input6" value="" placeholder="请输入验证码" />
+                        <div class="getRegCode"><a href="javacript:void(0);" class="on">获取验证码</a></div>
+                    </div>
+
+                    <input type="password" name="user_pwd" class="input7" placeholder="请设置密码" />
+                </div>
+
+                <button class="reg">立即注册</button>
+
+                <div class="tips">已有账号？<text class="gologin"><a href="javacript:void(0);" class="on">马上登录</a></text></div>
+
+                <div class="third">
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="substancestudy_top">
+        <!--视频-->
+            <video height="375" width="800"   id="myVideo"  controls="controls"  preload="auto">
+                <source src="htts://demo.sdwanyue.com/uload/admin/20210331/e2c6b2a1747cc22a3fcd684197337335.m4" type="video/mp4">
+            </video>
+            </div>
+
+
+    <div class="substancestudy_content ">
+        <p>写作是人运用语言文字符号以记述的方式反映事物、表达思想感情、传递知识信息、实现交流沟通的创造性脑力劳动过程。</p><p>作为一个完整的系统过程，写作活动大致可分为“采集—构思—表述”三个阶段。与作家的自由写作、职业人群的专业写作不同，语文课程意义的写作，是学生在教师指导下按照特定要求用书面语言创造文本，以发展和提高自身写作能力的学习活动。</p><p><br/></p>    </div>
+
+    
+    {include file='public/footer' }
+    <script>
+    var __SITEURL__ = "https://demo.sdwanyue.com";
+    var __SITEINFO__ = {"site_name":"\u4e07\u5cb3\u6559\u80b2\u5f00\u6e90","site_seo_title":"\u4e07\u5cb3\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf\u6f14\u793av1.0.7","site_seo_keywords":"\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf,\u5728\u7ebf\u6559\u80b2\u7cfb\u7edf,\u5f00\u6e90\u5728\u7ebf\u6559\u80b2\u7cfb\u7edf,\u5f00\u6e90\u5728\u7ebf\u6559\u80b2\u5e73\u53f0,\u5f00\u6e90\u6559\u80b2APP\u5f00\u53d1,\u5f00\u6e90\u6559\u80b2\u8f6f\u4ef6,\u5f00\u6e90\u7f51\u6821\u7cfb\u7edf\u6e90\u7801,\u5f00\u6e90\u7f51\u6821\u5e73\u53f0\u642d\u5efa,\u5f00\u6e90\u77e5\u8bc6\u4ed8\u8d39\u7cfb\u7edf\u6e90\u7801","site_seo_description":"\u5f00\u6e90\u6559\u80b2\u7cfb\u7edf\u6f14\u793a\u7ad9\u3002\u54c1\u8d28\u4f18\uff0c\u5168\u5f00\u6e90\uff0c\u6613\u642d\u5efa\uff0c\u529f\u80fd\u5168\u3002QQ\u5ba2\u670d\uff1a2415408120","site_icp":"","site_gwa":"","site_admin_email":"","site_analytics":"","site_url":"https:\/\/demo.sdwanyue.com","copyright":"\u4e07\u5cb3\u6559\u80b2\u5f00\u6e90","apk_ver":"","apk_url":"","apk_des":"\u7248\u672c\u66f4\u65b0\uff0c\u662f\u5426\u524d\u5f80\u66f4\u65b0\uff1f","ipa_ver":"","ios_shelves":"","ipa_url":"","ipa_des":"\u7248\u672c\u66f4\u65b0\uff0c\u662f\u5426\u524d\u5f80\u66f4\u65b0\uff1f","qr_url":"","site_phone":"","wx_url":"","small_shelves":"1.0.0"};
+    var userinfoj = {"id":27,"sex":0,"birthday":0,"coin":"0.00","consumption":"0.00","user_login":"13800000000","user_nickname":"1\u4e8c\u4e94","avatar":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","avatar_thumb":"https:\/\/demo.sdwanyue.com\/upload\/default\/20211212\/75007c35f0c35b7272845afd379893c8.jpg","signature":"","mobile":"","login_type":0,"school":"","experience":null,"feature":null,"type":0,"signoryid":0,"identity":"","courses":0,"list_order":10000,"gradeid":3,"integral":"0.00","token":"ba2ec56d7c907c8260d4a3685775b0eb","gradename":"\u4e8c\u5e74\u7ea7","signory":[],"identitys":[]}; //用户信息
+
+</script>
+{include file='public/foot' }
+
+
+    <script>
+        var courseid = "327"; //课程id
+        var star = 0;//星级
+        var page = 1;//页码
+        var type = "2";//类型
+
+        var paytype = "0";//是否付费  0免费 1收费  2密码
+        var ifbuy = "0";//是否支付了
+        var trialtype = "0";//是否可以试学
+        var trialval = "";//试学值
+
+        var totalmoney = "免费";//价格
+        var name_t = "暑假作业写作班";//名字
+
+        //检测试看功能
+        if(type == 2 && paytype==1 && ifbuy==0 && trialtype!=0){
+            var isTanc = false;
+            //获取视频DOM元素
+            var myVideo = document.getElementById("myVideo");
+
+            //使用事件监听方式捕捉事件， 此事件可作为实时监测video 播放状态
+            myVideo.addEventListener("timeupdate",function(){
+                var timeDisplay;
+                //用秒数来显示当前播放进度
+                timeDisplay = Math.floor(myVideo.currentTime);
+                //当视频播放到 4s的时候做处理
+                if(timeDisplay >= trialval){
+                        //处理代码
+                        myVideo.currentTime=trialval;//移动到大于10秒自动返回
+                        myVideo.pause();
+                        if(isTanc == false){
+                            confirms('试看结束');
+                            isTanc = true;
+                        }
+                }else{
+                    isTanc = false;
+                }
+            },false);  
+            
+            //进度条移动事件
+            myVideo.addEventListener('seeking', function(e) {
+				//移动到大于10秒自动返回
+				if(Math.floor(myVideo.currentTime)>=trialval){
+                    myVideo.currentTime=trialval;
+                    if(isTanc == false){
+                        confirms('试看结束');
+                        isTanc = true;
+                    }
+				}else{
+                    isTanc = false;
+                }
+            })
+            
+
+        }else if(type == 1 && paytype==1 && ifbuy==0 && trialtype!=0){
+            var h=$('.substancestudy_content').height();
+            var h_n=h*trialval*0.01;
+            $('.substancestudy_content').height(h_n);
+            $('.substancestudy_content').removeClass('opacity_yes');
+        }
+
+
+        $('.lock_title').click(function(){
+            confirms('是否去购买？');
+        })
+
+
+
+
+
+
+        function confirms(title){
+            //询问框
+            layer.confirm(title, {
+                btn: ['去购买','取消'] //按钮
+            }, function(){
+                window.open("/student/detail/buy?courseid="+courseid+"&type=0&method=0&totalmoney="+totalmoney+"&name="+name_t+"&ismaterial=0");  
+            }, function(){
+          
+            });
+        }
+
+    </script>
+    <script src="../../static/student/js/detail.js"></script>
+</body>
+</html>

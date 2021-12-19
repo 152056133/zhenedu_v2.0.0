@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>三月飞</title>
+    
+    {include file="public/head" }
+
+    <link href="../../static/student/css/lessionlist.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    {include file="public/header" }
+
+    <div class="less_top" >
+        <div class="middle">
+            <div class="ul" style="position: relative;top: 20px;margin-top: 0;">
+                <div class="left">学段</div>
+                <div id="xd" class="right">
+                    {volist name="section" id="s"}
+                        <div class="li active" id="{$s.id}" onclick="search_s({$s.id})">{$s.title}</div>
+                    {/volist}
+                </div>
+            </div>
+            <div class="ul" style="margin-top: 30px;">
+                <div class="left">年级</div>
+                <div id="nj" class="right">
+                    {volist name="grade" id="g"}
+                        <div class="li active" onclick="search_s({$g.id},{$g.pid})">{$g.title}</div>
+                    {/volist}
+                </div>
+            </div>
+
+            <div class="ul">
+                <div class="left">类别</div>
+                <div id="lb" class="right">
+                    <div class="li active zhibo-info" data-id="3">直播</div>
+                    <div class="li neirong-info" data-id="4">内容</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="less_list_less_info less_list less_list_nei" >
+        <ul>
+            <li>
+                    <a href="/student/detail/class?id=213">
+                        <div class="content">
+                            <div class="top" style="background: url() no-repeat;background-size: cover;">
+                                <div class="tip">课程</div>
+                            </div>
+                            <div class="title">测试推荐</div>
+                            <div class="information">
+                                <text class="text1"></text>
+                                                                
+                            </div>
+                            <div class="bottom">
+                                <img class="img1" src="">
+                                <text class="name">55555</text>
+                                <text class="mian">免费</text>
+                                                               
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/student/detail/class?id=208">
+                        <div class="content">
+                            <div class="top" style="background: url() no-repeat;background-size: cover;">
+                                <div class="tip">课程</div>
+                            </div>
+                            <div class="title">化学</div>
+                            <div class="information">
+                                <text class="text1">3课时</text>
+                                                                
+                            </div>
+                            <div class="bottom">
+                                <img class="img1" src="">
+                                <text class="name">55555</text>
+                                <text class="mian">免费</text>
+                                                               
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/student/detail/class?id=173">
+                        <div class="content">
+                            <div class="top" style="background: url() no-repeat;background-size: cover;">
+                                <div class="tip">课程</div>
+                            </div>
+                            <div class="title">吃水不挖井人第一章</div>
+                            <div class="information">
+                                <text class="text1">1课时</text>
+                                                                
+                            </div>
+                            <div class="bottom">
+                                <img class="img1" src="">
+                                <text class="name">55555</text>
+                                <text class="mian">免费</text>
+                                                               
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/student/detail/class?id=57">
+                        <div class="content">
+                            <div class="top" style="background: url() no-repeat;background-size: cover;">
+                                <div class="tip">课程</div>
+                            </div>
+                            <div class="title">数学一元一次方程</div>
+                            <div class="information">
+                                <text class="text1">6课时</text>
+                                                                
+                            </div>
+                            <div class="bottom">
+                                <img class="img1" src="">
+                                <text class="name">55555</text>
+                                <text class="mi">密码</text>
+                                                               
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/student/detail/class?id=43">
+                        <div class="content">
+                            <div class="top" style="background: url() no-repeat;background-size: cover;">
+                                <div class="tip">课程</div>
+                            </div>
+                            <div class="title">中考前临时突击学习物理并能立竿见影的方法！</div>
+                            <div class="information">
+                                <text class="text1"></text>
+                                                                
+                            </div>
+                            <div class="bottom">
+                                <img class="img1" src="">
+                                <text class="name">55555</text>
+                                <text class="money">￥65</text>
+                                                               
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        
+    </div>
+    {include file="public/footer" }
+{include file='public/foot' }
+    <script>
+        var xdid = "1"; //学段id
+        var njid = "2"; //年级id
+        var kmid = '0'; //科目id
+        var lbid = '1'; //类别id
+        var page = 1; //页码
+    </script>
+    <script type="text/javascript">
+        function search_s(id, pid)
+        {
+            $.ajax({
+                url:'index/course/index',
+                data: {id:id, pid:pid},
+                method: 'POST',
+                error:function(e){
+                    console.log(e);
+                },
+                success:function(data){
+                    console.log(data);
+                    $('#nj').html('');
+                    for (var i = data.length - 1; i >= 0; i--) {
+                        $('#nj').append("<div class='li active'>"+data[i].title+"</div>");
+                    }
+                }
+            });
+        }
+    </script>
+    <!-- <script src="./static/student/js/lessionlist.js?t=13"></script> -->
+</body>
+</html>
