@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>登录</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Hotair Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="../../static/login/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="../../static/login/css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1>欢迎</h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                 
+                    <div class="content-wthree">
+                        <h2>登录</h2>
+                        <p>账号</p>
+                            <input type="text" class="text input1" name="user_name" placeholder="用户名" required="">
+                            <input type="password" class="password input2" name="user_pwd" placeholder="密码" required="">
+                            <button class="btn" id="login">登录</button>
+                        <p>其它登录方式</p>
+                        <div class="social-icons w3layouts">
+                            <ul>
+                                <li>
+                                    <a href="#url" class="facebook"><span class="fa fa-facebook"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="twitter"><span class="fa fa-twitter"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="pinterest"><span class="fa fa-pinterest"></span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="account">还没有账号？ <a href="#signup">注册</a></p>
+                    </div>
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">Copyright &copy; 2022.Zhenedu All rights reserved.<a target="_blank" href=""></a></p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+    <script src="../../static/login/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        //点击登录
+    $('.content-wthree #login').click(function(){
+            var user_name = $('.content-wthree .input1').val();
+            var user_pwd = $('.content-wthree .input2').val();
+    
+            if(user_name.length <=0){
+                layer.msg('请输入手机号');
+                return ;
+            }
+    
+            if(user_pwd.length <=0){
+                layer.msg('请输入密码');
+                return ;
+            }
+    
+            $.ajax({
+                url:'/index/Login/loginbypass',
+                type:'POST',
+                data:{user_name:user_name,user_pwd:user_pwd},
+                //dataType:'json',
+                error:function(e){
+                    alert('系统繁忙');
+                },
+                success:function(data){
+                    if(data.status == 200){
+                        setTimeout(function(){
+                            location.href="{:url('index/index')}"
+                        },1500)                   
+                    } 
+                }
+            });
+
+
+    })
+    </script>
+
+</body>
+
+</html>

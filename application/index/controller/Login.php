@@ -10,8 +10,6 @@ use app\index\model\LoginModel;
 
 class Login extends Base
 {
-	
-
 	// 注册
 	public function register(Request $request)
 	{
@@ -66,7 +64,12 @@ class Login extends Base
 		return $res ? ['status' => 200, 'msg' => '注册成功'] : ['status' => 500, 'msg' => '注册失败'];
 	}
 
-	// 密码登录
+	public function login()
+	{
+		return $this->fetch();
+	}
+
+	// 弹窗 密码登录
 	public function loginByPass(Request $request)
 	{
 		$param = $request->param();
@@ -89,11 +92,13 @@ class Login extends Base
 		}
 
 		$md5_password = $user->user_pwd;
+		$user_id = $user->id;
 		if(md5($user_pwd) != $md5_password){
 			return ['status' => 500, 'msg' => '用户名或密码不正确'];
 		} else {
 			$token = $request->token();
 			Session::set('username', $user_name);
+			Session::set('user_id', $user_id);
 			Session::set('token', $token);
 			
 			$user->token = $token;

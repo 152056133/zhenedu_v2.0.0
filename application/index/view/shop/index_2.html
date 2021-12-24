@@ -1,11 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>三月飞</title>
-    
-    {include file="public/head" }
+    {include file='public/head' }
 
-    <link href="../../static/student/css/lessionlist.css" rel="stylesheet" type="text/css">
+    <link href="../../static/student/css/detail.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="common_header_nav">
@@ -202,142 +202,166 @@
             </div>
         </div>
     </div>
+        
+    <div class="common_addr none">
+    <div class="common_addr_content">
+        <div class="common_addr_content_top">
+            <text>收货地址</text>
+            <text class="common_addr_content_top_tips">（请如实填写，课程教材将以此地址邮寄）</text>
+            <img class="common_addr_content_top_img" src="../../static/student/images/common/black_cha.png">
+        </div>
+        <div>
+            <form id="addr">
+                <div class="common_addr_content_li" style="margin-top: 30px;">
+                    <text class="common_addr_content_li_xing" style="position: relative;bottom: 14px;">*</text>
+                    <text class="common_addr_content_li_text" style="position: relative;bottom: 14px;">地址信息：</text>
 
-    <div class="less_top" >
-        <br>
-        <div class="middle">
-            <div class="ul" style="position: relative;top: 20px;margin-top: 0;">
-                <div class="left">学段</div>
-                <div id="xd" class="right">
-                    {volist name="section" id="s"}
-                        {if condition="(isset($_GET['s'])) && $_GET['s']==$s.id"}
-                        <div class="li active" id="data{$s.id}" onclick="search_s({$s.id})">{$s.title}</div>
-                        {else /}
-                        <div class="li" id="data{$s.id}" onclick="search_s({$s.id})">{$s.title}</div>
-                        {/if}
-                    {/volist}
+                    <a href="javascript:void(0)" style="display: inline-block;font-size: 15px;" class="pick-area pick-area1" name="省/市/区"></a>
+
+                    <!-- <input class="common_addr_content_li_input" readonly type="text" placeholder="选择省/市/区"> -->
+                </div>
+                <div class="common_addr_content_li">
+                    <text class="common_addr_content_li_xing" style="position: relative;bottom: 55px;">*</text>
+                    <text class="common_addr_content_li_text" style="position: relative;bottom: 55px;">详细地址：</text>
+                    <textarea class="common_addr_content_li_textarea" name="textarea" placeholder="请输入详细地址，如道路、门牌号、小区、楼栋号、单元等信息"></textarea>
+                </div>
+                <div class="common_addr_content_li">
+                    <text class="common_addr_content_li_xing" style="margin-left: 35px;">*</text>
+                    <text class="common_addr_content_li_text">收货人姓名：</text>
+                    <input class="common_addr_content_li_input" type="text" name="name" placeholder="请填写姓名" value="">
+                </div>
+                <div class="common_addr_content_li">
+                    <text class="common_addr_content_li_xing">*</text>
+                    <text class="common_addr_content_li_text">手机号码：</text>
+                    <input class="common_addr_content_li_input" type="text" name="phone" placeholder="请填写手机号码" value="">
+                </div>
+
+                <button class="common_addr_content_sub" type="button">确认地址</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+
+    <div class="detail_substance">
+        <div class="top">
+            <div class="content">
+                <img class="thumb" src="{$course.img}">
+                <div class="msg">
+                    <div class="des">
+                        {$course.title}
+                        <text>{$course.type}</text>
+                    </div>
+                    <div class="msgnum" style="margin-top: -15px;width: 500px;">
+                        <text style="font-size: 30px;color: red;">{$course.course_num}个免费名额等你来抢！</text>
+                    </div>
+                    <div class="tmsg">
+                        
+                        <span class="msg0">
+                            <img src="../../static/images/default.png">
+                            <span>
+                                <div class="avatar">{$course.teacher_id}</div>
+                                <div class="tip">主讲老师</div>
+                            </span>
+                            
+                        </span>
+                    </div>
+                    <div class="mian" id="countdown" style="margin-top: 25px;font-size: 20px">倒计时：</div>
+                    <button class="enterlive" id="miaosha" value="1" disabled="disabled" style="cursor: not-allowed;background-color: gray;width: 150px;font-size: 20px;height: 50px">秒杀</button>
                 </div>
             </div>
-            <div class="ul" style="margin-top: 30px;">
-                <div class="left">年级</div>
-                <div id="nj" class="right">
-                    {volist name="grade" id="g"}
-                        {if condition="(isset($_GET['g'])) && $_GET['g']==$g.id"}
-                        <div class="li active" id="data{$g.id}" onclick="search_g({$g.id},{$g.pid})">{$g.title}</div>
-                        {else /}
-                        <div class="li" id="data{$g.id}" onclick="search_g({$g.id},{$g.pid})">{$g.title}</div>
-                        {/if}
-                    {/volist}
-                </div>
+        </div>
+        <div class="bcontent">
+            <div class="nav">
+                <a class="text js b_fff" href="javascript:void(0);">介绍</a>
             </div>
-
-            <div class="ul">
-                <div class="left">类别</div>
-                <div id="lb" class="right">
-                    {volist name="type" id="t"}
-                        {if condition="(isset($_GET['t'])) && $_GET['t']==$t.id"}
-                        <div class="li active" id="data{$t.id}" onclick="search_t({$t.id})">{$t.title}</div>
-                        {else /}
-                        <div class="li" id="data{$t.id}" onclick="search_t({$t.id})">{$t.title}</div>
-                        {/if}
-                    {/volist}
-                    <!-- <div class="li active zhibo-info" data-id="3">直播</div>
-                    <div class="li neirong-info" data-id="4">内容</div> -->
+            <div class="area1">
+                <div class="tip">
+                    <text>内容介绍</text>
+                </div>
+                <div class="detail">
+                    <p>优秀写作课</p>
+                </div>
+                <div class="tip">
+                    <text>讲师介绍</text>
+                </div>
+                <div class="teacherinfo">
+                    <a href="/student/teachers/detail?touid=47"><img class="avatar" src="../../static/images/default.png"></a>
+                    <div class="info">
+                        <div class="name">
+                            <text>{$course.teacher_id}</text>
+                            <text class="text1">主讲老师</text>
+                        </div>
+                        <div class="textarea1">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <div class="less_list_less_info less_list less_list_nei" >
-        <ul>
-            {volist name='course' id='c'}
-                <li>
-                    <a href="/index/detail/class?id={$c.id}">
-                        <div class="content">
-                            <div class="top" style="background: url({$c.img}) no-repeat;background-size: cover;">
-                                <!-- <img src="/uploads/20211218/default.jpg" /> -->
-                                <div class="tip">{$c.type_id}</div>
-                            </div>
-                            <div class="title">{$c.title}</div>
-                            <div class="information">
-                                <text class="text1">{$c.title}</text>
-                                                                
-                            </div>
-                            <div class="bottom">
-                                <img class="img1" src="">
-                                <text class="name">{$c.subject_id}</text>
-                                <text class="name">{$c.teacher_id}</text>
-                                <text class="mian">免费</text>
-                                                               
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            {/volist}
-        </ul>
-    
-    </div>
-    <div class="course-page">
-        {$course|raw}
-    </div>
-    {include file="public/footer" }
+    {include file='public/footer' }
 {include file='public/foot' }
+
+    <script src="../../static/student/js/pick-pcc.min.1.0.1.js"></script>
     <script>
-        var xdid = "1"; //学段id
-        var njid = "2"; //年级id
-        var kmid = '0'; //科目id
-        var lbid = '1'; //类别id
-        var page = 1; //页码
+        $(".pick-area1").pickArea();
     </script>
+    <script src="../../static/student/js/detail.js"></script>
     <script type="text/javascript">
-        function search_s(id)
-        {
-            window.location.href = 'index.html?s='+id;    
-        }
-        function search_g(id, pid)
-        {
-            window.location.href = 'index.html?s='+pid+'&g='+id;
-        }
-        function search_t(id)
-        {
-            var newurl = updateQueryStringParameter(window.location.href, 't', id);
-            window.location.href = newurl;
-            // window.history.replaceState({
-            //     path: newurl
-            // }, '', newurl);
-        }
+        $(function(){
+            // 获取倒计时时间
+            setInterval(gettime,1000);
 
-        // 在当前url最后追加参数
-        function updateQueryStringParameter(uri, key, value) {
-            if(!value) {
-                return uri;
-            }
-            var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-            var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-            if (uri.match(re)) {
-                return uri.replace(re, '$1' + key + "=" + value + '$2');
-            }
-            else {
-                return uri + separator + key + "=" + value;
-            }
-        }
+            $('#miaosha').click(function(){
+                // 判断是否登录，未登录则跳转至登录页面
+                $.get('isLogin',function(data,status){
+                    if(status == 'success'){
+                        if(data == ''){
+                            window.location.href="{:url('index/login/login')}";
+                        }
+                    }
+                });
+                // 判断是否到时间，如果没到时间，不往下进行
+                $.get("getTime",function(data){
+                    if(data.time > 0){
+                        layer.msg('秒杀暂未开始');
+                        exit;
+                    }else{
+                        var click  = localStorage.getItem('clk');
+                        // if(click > 1)
+                        localStorage.setItem("clk", 1);
+                        var val = $('#miaosha').attr('value');
+                        // 限制只能点一次
+                        $.get('/go/'+data.url+'/order', {val:val}, function(res,status){
+                            layer.msg(res.msg);
+                        });
+                    }
+                });
+            });
+        });
 
+        function gettime()
+        {
+            $.get("getTime",function(data){
+                if(data.time >= 0){
+                    $("#countdown").html('倒计时：' + data.hour + '时' + data.min + '分' + data.sec + '秒');
+                }else{
+                    $("#countdown").html('点击下方按钮开始秒杀！');
+                    $("#miaosha").html('秒杀');
+                    $("#miaosha").css('background-color', 'rgb(56,218,166)');
+                    $("#miaosha").css('cursor', 'pointer');
+                    $('#miaosha').removeAttr("disabled"); // 移除disabled属性
+                }
+            });
+        }
+        function test()
+        {
+            alert('test');
+        }
     </script>
     <style type="text/css">
-        .course-page{
-            width: 850px;
-            margin: -25px auto;
-            clear: both;
-            overflow: hidden;
-            padding-bottom: 80px;
-        }
-        .pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
-        .pagination>li{display:inline}
-        .pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.428571429;text-decoration:none;background-color:#fff;border:1px solid #ddd}
-        .pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-bottom-left-radius:4px;border-top-left-radius:4px}
-        .pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus{background-color:#eee}.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{z-index:2;color:#fff;cursor:default;background-color:#428bca;border-color:#428bca}.pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{color:#999;cursor:not-allowed;background-color:#fff;border-color:#ddd}.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px}.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-bottom-left-radius:6px;border-top-left-radius:6px}.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px}.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-bottom-left-radius:3px;border-top-left-radius:3px}.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}
     </style>
-    <!-- <script src="./static/student/js/lessionlist.js?t=13"></script> -->
 </body>
 </html>

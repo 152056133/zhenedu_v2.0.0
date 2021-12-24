@@ -14,3 +14,4 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+Route::get('go/:url/order', 'index/shop/order');

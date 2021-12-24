@@ -34,6 +34,7 @@ class Course extends Base
 						->field('id,title,grade_id1,grade_id2,img,type_id,teacher_id,subject_id')
 						->order('create_at desc')
 						->paginate(9);
+			dump(CourseModel::getLastSql());
 			foreach ($course as $key => $value) {
 				if($value['type_id'] == 1){
 					$course[$key]['type_id'] = '视频';
